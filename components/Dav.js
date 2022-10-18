@@ -6,58 +6,83 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Dav(props) {
-  const { nodes, materials } = useGLTF("/4D CAPS FOODS.gltf");
+  const { nodes, materials } = useGLTF("/BANG BRANDING PALE.gltf");
   return (
     <group {...props} dispose={null}>
       <mesh
         castShadow
         receiveShadow
+        geometry={nodes.Plano.geometry}
+        material={materials["Material.001"]}
+        position={[0.02, -0.06, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.Plano001.geometry}
         material={materials["Material.001"]}
-        position={[0.06, 0.18, -0.22]}
+        position={[0.02, -0.06, 0]}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Plano002.geometry}
         material={materials["Material.001"]}
-        position={[0.06, 0.18, -0.22]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Plano003.geometry}
-        material={materials["Material.001"]}
-        position={[-0.27, 0.18, -0.26]}
+        position={[0.02, -0.06, 0]}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Texto.geometry}
         material={materials["Material.001"]}
-        position={[-0.14, -0.03, 0.05]}
+        position={[-0.21, -0.05, 0.66]}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={0.62}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Texto001.geometry}
         material={materials["Material.001"]}
-        position={[-0.28, -0.03, -0.14]}
+        position={[-1.03, -0.05, -0.04]}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={0.56}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Texto002.geometry}
         material={materials["Material.001"]}
-        position={[-0.03, -0.02, 0.02]}
+        position={[0.59, 0.58, 0.42]}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={0.65}
       />
-      <group position={[0.1, -0.14, -0.11]}>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.PALE001.geometry}
+        material={materials.wire_154215229}
+        position={[0.02, -0.05, -0.1]}
+        scale={[1, 1, 1.25]}
+      />
+      <group position={[-0.41, 1.19, -0.62]} rotation={[Math.PI, 0, 0]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["TQ_ARD_D2-geom"].geometry}
+          material={materials.TQ_ARD_D2_front}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["TQ_ARD_D2-geom_1"].geometry}
+          material={materials.TQ_ARD_D2_back}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["TQ_ARD_D2-geom_2"].geometry}
+          material={materials.TQ_ARD_D2_edge}
+        />
+      </group>
+      <group position={[-0.46, -0.37, -0.63]} rotation={[Math.PI, 0, 0]}>
         <mesh
           castShadow
           receiveShadow
@@ -77,82 +102,8 @@ export function Dav(props) {
           material={materials.TQ_ARD_edge}
         />
       </group>
-      <group position={[0.32, -0.09, 0.17]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["TQ_ARD-geom001"].geometry}
-          material={materials["TQ_ARD_front.001"]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["TQ_ARD-geom001_1"].geometry}
-          material={materials["TQ_ARD_back.001"]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["TQ_ARD-geom001_2"].geometry}
-          material={materials["TQ_ARD_edge.001"]}
-        />
-      </group>
-      <group
-        position={[0.11, -0.02, -0.16]}
-        rotation={[Math.PI / 2, 0, Math.PI / 2]}
-        scale={1.28}
-      >
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Curve_1.geometry}
-          material={materials.Material}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Curve_2.geometry}
-          material={materials["Material.003"]}
-        />
-      </group>
-      <group
-        position={[0.11, 0.01, 0.06]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={1.27}
-      >
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Curve001_1.geometry}
-          material={materials.Material}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Curve001_2.geometry}
-          material={materials["Material.002"]}
-        />
-      </group>
-      <group
-        position={[0.11, 0.01, 0.13]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={1.27}
-      >
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Curve001_1.geometry}
-          material={materials.Material}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Curve001_2.geometry}
-          material={materials["Material.002"]}
-        />
-      </group>
     </group>
   );
 }
 
-useGLTF.preload("/4D CAPS FOODS.gltf");
+useGLTF.preload("/BANG BRANDING PALE.gltf");
