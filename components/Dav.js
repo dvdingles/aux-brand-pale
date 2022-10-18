@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Dav(props) {
-  const { nodes, materials } = useGLTF("/BANG BRANDING PALE.gltf");
+  const { nodes, materials } = useGLTF("/BANG BRANDING PALE1.gltf");
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -51,7 +51,22 @@ export function Dav(props) {
         receiveShadow
         geometry={nodes.Texto002.geometry}
         material={materials["Material.001"]}
-        position={[0.59, 0.58, 0.42]}
+        position={[0.43, 0.58, 0.54]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Plano008.geometry}
+        material={materials["Material.001"]}
+        position={[0.02, -0.06, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Texto006.geometry}
+        material={materials["Material.001"]}
+        position={[0.47, 0.05, 0.54]}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
@@ -59,8 +74,24 @@ export function Dav(props) {
         receiveShadow
         geometry={nodes.PALE001.geometry}
         material={materials.wire_154215229}
-        position={[0.02, -0.05, -0.1]}
-        scale={[1, 1, 1.25]}
+        position={[0.02, -0.04, -0.1]}
+        scale={[0.98, 0.92, 1.23]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.PALE003.geometry}
+        material={materials.wire_154215229}
+        position={[0.02, 0.09, -0.1]}
+        scale={[0.98, 0.92, 1.23]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.PALE004.geometry}
+        material={materials.wire_154215229}
+        position={[0.02, 0.22, -0.1]}
+        scale={[0.98, 0.92, 1.23]}
       />
       <group position={[-0.41, 1.19, -0.62]} rotation={[Math.PI, 0, 0]}>
         <mesh
@@ -106,4 +137,4 @@ export function Dav(props) {
   );
 }
 
-useGLTF.preload("/BANG BRANDING PALE.gltf");
+useGLTF.preload("/BANG BRANDING PALE1.gltf");
